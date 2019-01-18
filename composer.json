@@ -1,0 +1,25 @@
+{
+	"name": "dashifen/tmf-challenge",
+	"description": "My response to a programming challenge offered by the Motley Fool.",
+	"type": "project",
+	"license": "unlicense",
+	"authors": [
+		{
+			"name": "David Dashifen Kees",
+			"email": "dashifen@dashifen.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Dashifen\\TMFChallenge\\": "src"
+		}
+	},
+
+	"require": {
+		"php": ">=7.2",
+		"dashifen/wp-handler": "2.0.*",
+		"dashifen/containers": "1.1.*"
+	}
+}
