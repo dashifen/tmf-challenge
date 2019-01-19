@@ -1,5 +1,11 @@
-import App from "./fool-exchange.js";
+import Vue from "vue";
+import FoolExchange from "./fool-exchange.vue";
+
+Vue.config.productionTip = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-	App.initialize();
+    new Vue({
+        el: "#the-fool-exchange-vue-root",
+        components: {FoolExchange}
+    });
 });

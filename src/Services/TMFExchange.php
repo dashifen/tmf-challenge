@@ -78,7 +78,7 @@ class TMFExchange {
 
 				// for our purposes in this challenge, there's not much to do
 				// if we can't hit the API.  in a production system, checking
-				// the status of the API would be my first try and solving
+				// the status of the API would be my first try in solving
 				// the problem.  after that, ensuring my key is correct.
 				// next, it might be to try X times after which we give up.
 				// falling back on prior data in a cache or stored in the

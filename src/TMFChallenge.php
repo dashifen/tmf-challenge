@@ -9,7 +9,6 @@ use Dashifen\WPHandler\Handlers\AbstractPluginHandler;
 use Dashifen\WPHandler\Hooks\HookException;
 use Latitude\QueryBuilder\Engine\MySqlEngine;
 use Latitude\QueryBuilder\QueryFactory;
-
 use function Latitude\QueryBuilder\alias;
 use function Latitude\QueryBuilder\on;
 
@@ -302,7 +301,9 @@ class TMFChallenge extends AbstractPluginHandler {
 			// our script as follows to include that information all the
 			// time.
 
-			wp_localize_script($jsHandle, "tmfAjax", ["url" => admin_url("admin-ajax.php")]);
+			wp_localize_script($jsHandle, "tmfAjax", [
+				"url" => admin_url("admin-ajax.php"),
+			]);
 		}
 	}
 }
