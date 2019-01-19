@@ -22,7 +22,7 @@
                         <label for="select-date">Select Date:</label>
                         <select id="select-date" name="date" v-model="date">
                             <option value="all">All Dates</option>
-                            <option v-for="date in dates" :value="date">{{ date | beautifyDate }}</option>
+                            <option v-for="date in dates" :value="date">{{ date | transformDate }}</option>
                         </select>
                     </li>
                 </ol>
@@ -30,25 +30,27 @@
         </form>
 
         <table>
-            <caption>{{ caption }}</caption>
+            <caption>
+                {{ caption }}
+            </caption>
 
             <thead>
             <tr>
                 <th scope="col" id="symbol">Ticker Symbol</th>
-                <th scope="col" id="date">Date</th>
-                <th scope="col" id="time">Time</th>
                 <th scope="col" id="usd" class="money">USD</th>
                 <th scope="col" id="sgd" class="money">SGD</th>
+                <th scope="col" id="date">Date</th>
+                <th scope="col" id="time">Time</th>
             </tr>
             </thead>
 
             <tbody>
                 <tr v-for="row in rows">
                     <td headers="symbol">{{ row.ticker }}</td>
-                    <td headers="date">{{ row.date | beautifyDate }}</td>
+                    <td headers="usd" class="money">{{ row.price | transformMoney }}</td>
+                    <td headers="sgd" class="money">{{ row.price * rates[row.date] | transformMoney }}</td>
+                    <td headers="date">{{ row.date | transformDate }}</td>
                     <td headers="time">{{ row.time }}</td>
-                    <td headers="usd" class="money">{{ row.price | money }}</td>
-                    <td headers="sgd" class="money">{{ row.price * rates[row.date] | money }}</td>
                 </tr>
             </tbody>
         </table>
@@ -59,6 +61,7 @@
     import Axios from "axios";
 
     const numberFormat = require("locutus/php/strings/number_format");
+    const sprintf = require("locutus/php/strings/sprintf");
 
     export default {
         name: "fool-exchange",
@@ -91,20 +94,50 @@
             },
 
             rows() {
-                if (this.symbol === "all" && this.date === "all") {
+                if (!this.isFiltered()) {
                     return this.prices;
                 }
 
+                let temp = this.prices;
+                if (this.isSymbolFiltered()) {
+                    temp = temp.filter((price) => {
+                        return price.ticker === this.symbol;
+                    });
+                }
 
+                if (this.isDateFiltered()) {
+                    temp = temp.filter((price) => {
+                        return price.date === this.date;
+                    })
+                }
+
+                return temp;
             },
 
             caption() {
-                return "CAPTION HERE";
+                const caption = "%s on %s";
+                const symbol = this.isSymbolFiltered() ? this.symbol : "All symbols";
+                const date = this.isDateFiltered() ? this.date : "all dates";
+                return sprintf(caption, symbol, date);
+            }
+        },
+
+        methods: {
+            isFiltered() {
+                return this.isSymbolFiltered() || this.isDateFiltered();
+            },
+
+            isSymbolFiltered() {
+                return this.symbol !== "all";
+            },
+
+            isDateFiltered() {
+                return this.date !== "all";
             }
         },
 
         filters: {
-            beautifyDate(date) {
+            transformDate(date) {
 
                 // dates come to us here as YYYYMMDD values.  we want to
                 // return YYYY-MM-DD to make it more readable on-screen.
@@ -114,12 +147,8 @@
                     + "-" + date.substr(6);
             },
 
-            money(number) {
+            transformMoney(number) {
                 return numberFormat(number,2);
-            },
-
-            toSGD(usd, rate) {
-                return usd * rate;
             }
         },
 
@@ -207,14 +236,11 @@
     }
 
     caption {
-        text-align: left;
+        font-weight: bold;
     }
 
-    td, th {
-        padding: .5rem;
-    }
-
-    th {
+    td, th, caption {
+        padding: .5rem .75em;
         text-align: left;
     }
 
