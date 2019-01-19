@@ -1,2 +1,11 @@
 # tmf-challenge
 My solution to a programming challenge provided by the Motley Fool.
+
+I chose to implement this as a WordPress plugin since that's the medium in which the position's work is done.  And, it allows you to download the zip from this repo and cram it into your own WP set up and it'll probably work out just like it does on my site. It should give you a solid example of my preferred OOP style of building WordPress plugins.  For the front-end, I chose to work with Vue since it's also part of the position's ecosystem, but frankly also because it probably saved me a few hours of writing old-school jQuery event observers!
+
+As I worked, I tried to note areas that I was skipping the sort of normal production-ready things that I'd ordinarily want to complete before releasing anything.  Those notes are in the comment blocks throughout the code.  That said, here are a few specific things that I didn't mention there that would be worth considering if we were looking to enhance this plugin later:
+
+1. JavaScript History API - It might be nice to use the JS History API to update the URL as selections are made by the visitor.  That way, they could send a bookmark or send a specific URL and it would load the data for them.
+2. WordPress Query Variables - I did put this in the code, but it's worth noting that, at the moment, the full dataset is loaded into the interface when the component mounts.  That probably wouldn't work for a production ready component because the dataset would likely be much bigger.  Some use of WP query variables in conjunction with the JS History API would make it so that we could load specific, limited datasets instead  of the whole thing.
+3. I really didn't worry about error checking or catching Exceptions.  Especially as it pertains to the Fixer.io API, having problems on the server-side probably need a better solution that what I put in here (e.g. cached data or at least effective error messages).
+4. I'm not sure what would happen if we loaded this into a site that crams the entire content of a page through Vue to watch for FontAwesome icons or something like that.  I bet some of the JS would break somewhere, but I'm not sure.  But, in a production environment, I'd have more information about how it's all set up and what to avoid.
