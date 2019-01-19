@@ -27,7 +27,7 @@ use Dashifen\TMFChallenge\TMFChallenge;
 
 $content = file_get_contents(__FILE__);
 preg_match("/Version: +([\.0-9]+)/", $content, $matches);
-define("THE_MOTLEY_FOOL_CHALLENGE_VERSION", $matches[1]);
+define("TMF_CHALLENGE_VERSION", $matches[1]);
 
 try {
 

@@ -158,4 +158,5 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
-
+### Other stuff
+/api-test.php

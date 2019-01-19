@@ -1,5 +1,5 @@
-import FontAwesome from "./font-awesome";
+import App from "./fool-exchange.js";
 
-document.addEventListener("DOMContentReady", () => {
-	FontAwesome.initialize();
+document.addEventListener("DOMContentLoaded", () => {
+	App.initialize();
 });

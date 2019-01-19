@@ -22,7 +22,9 @@ class Uninstaller {
 	public function uninstall(): void {
 		global $wpdb;
 
-		// the only thing we have to do when uninstalling our plugin is
+		delete_option("tmf-challenge-last-flush");
+
+		// the only other thing we have to do when uninstalling our plugin is
 		// delete the database store of the data and then remove the tables.
 		// note:  this happens during the uninstall hook, not deactivation.
 		// thus, a person can deactivate and re-activate the plugin without
