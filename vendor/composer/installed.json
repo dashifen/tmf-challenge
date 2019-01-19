@@ -81,24 +81,24 @@
     },
     {
         "name": "dashifen/wp-handler",
-        "version": "2.0.1",
-        "version_normalized": "2.0.1.0",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/dashifen/wp-handler.git",
-            "reference": "83564279ab3b437d3505b819c41c45866c3dc081"
+            "reference": "e228ee37d265ddf67f49d4823219135daec0ed45"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/dashifen/wp-handler/zipball/83564279ab3b437d3505b819c41c45866c3dc081",
-            "reference": "83564279ab3b437d3505b819c41c45866c3dc081",
+            "url": "https://api.github.com/repos/dashifen/wp-handler/zipball/e228ee37d265ddf67f49d4823219135daec0ed45",
+            "reference": "e228ee37d265ddf67f49d4823219135daec0ed45",
             "shasum": ""
         },
         "require": {
             "dashifen/exception": "1.1.*",
             "php": "^7.2"
         },
-        "time": "2018-11-24T20:18:09+00:00",
+        "time": "2019-01-19T20:17:57+00:00",
         "type": "project",
         "installation-source": "dist",
         "autoload": {
