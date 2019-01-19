@@ -1,0 +1,185 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3e7aa28c9522744740650dfd834baecb",
+    "packages": [
+        {
+            "name": "dashifen/containers",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dashifen/container.git",
+                "reference": "75a6b2542c44836b2802648397959758f797b33e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dashifen/container/zipball/75a6b2542c44836b2802648397959758f797b33e",
+                "reference": "75a6b2542c44836b2802648397959758f797b33e",
+                "shasum": ""
+            },
+            "require": {
+                "dashifen/exception": "1.1.*",
+                "php": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dashifen\\Container\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "David Dashifen Kees",
+                    "email": "dashifen@dashifen.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "A read-only with setters style object from which many objects can grow.",
+            "time": "2018-11-24T13:05:39+00:00"
+        },
+        {
+            "name": "dashifen/exception",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dashifen/exception.git",
+                "reference": "8c1063dcfe347ae990cda913207331772db78771"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dashifen/exception/zipball/8c1063dcfe347ae990cda913207331772db78771",
+                "reference": "8c1063dcfe347ae990cda913207331772db78771",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dashifen\\Exception\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Dashifen Kees",
+                    "email": "dashifen@dashifen.com",
+                    "homepage": "https://dashifen.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "a base class for exceptions in Dashifen's other work",
+            "time": "2018-09-28T15:41:12+00:00"
+        },
+        {
+            "name": "dashifen/wp-handler",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dashifen/wp-handler.git",
+                "reference": "83564279ab3b437d3505b819c41c45866c3dc081"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dashifen/wp-handler/zipball/83564279ab3b437d3505b819c41c45866c3dc081",
+                "reference": "83564279ab3b437d3505b819c41c45866c3dc081",
+                "shasum": ""
+            },
+            "require": {
+                "dashifen/exception": "1.1.*",
+                "php": "^7.2"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Dashifen\\WPHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Dashifen Kees",
+                    "email": "dashifen@dashifen.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "An object to define handlers for various WordPress action and filter hooks using protected methods. ",
+            "time": "2018-11-24T20:18:09+00:00"
+        },
+        {
+            "name": "latitude/latitude",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shadowhand/latitude.git",
+                "reference": "4eb456096087f27298059416e0b99df9428626f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shadowhand/latitude/zipball/4eb456096087f27298059416e0b99df9428626f3",
+                "reference": "4eb456096087f27298059416e0b99df9428626f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "eloquent/liberator": "^2.0",
+                "hoa/devtools": "^1.17",
+                "hoa/ruler": "2.17.05.16",
+                "phpstan/phpstan": "^0.9.1",
+                "phpunit/phpunit": "^6.0",
+                "vimeo/psalm": "^0.3.88"
+            },
+            "suggest": {
+                "hoa/ruler": "Adds support for creating criteria from strings"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Latitude\\QueryBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "https://github.com/shadowhand"
+                }
+            ],
+            "description": "A SQL query builder with zero dependencies",
+            "time": "2018-05-01T16:37:39+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2"
+    },
+    "platform-dev": []
+}

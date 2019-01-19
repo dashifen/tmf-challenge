@@ -1,0 +1,23 @@
+{
+	"name": "tmf-challenge",
+	"version": "1.0.0",
+	"description": "My response to a programming challenge offered by the Motley Fool.",
+	"license": "unlicense",
+	"author": "David Dashifen Kees",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dashifen/tmf-challenge"
+	},
+	"devDependencies": {
+		"vue": "^2.5.17",
+		"vue-template-compiler": "^2.5.17",
+		"@fortawesome/fontawesome-svg-core": "1.*",
+		"@fortawesome/free-solid-svg-icons": "5.*",
+		"@fortawesome/vue-fontawesome": "0.1.*",
+		"laravel-elixir-webpack-official": "^1.0.2",
+		"laravel-elixir-vue-2": "^0.3.0",
+		"laravel-elixir": "^6.0.0-14",
+		"webfontloader": "^1.6.28",
+		"gulp": "^3.9.1"
+	}
+}
